@@ -2,7 +2,7 @@ class World2D {
     constructor(canvas) {
         this.canvas = canvas;
         this.canvasCtx = canvas.getContext("2d");
-        this.objects = [];
+        this.sprites = [];
         
         this.update();
     }
@@ -14,11 +14,11 @@ class World2D {
     update() {
         this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
-        for (let object of this.objects) {
-            object.draw(this.canvasCtx);
+        for (let sprite of this.sprites) {
+            sprite.draw(this.canvasCtx);
             
             for (let other of this.objects) {
-                checkForCollision(object, other);
+                checkForCollision(sprite, other);
             }
         }
         
@@ -26,7 +26,7 @@ class World2D {
     }
 }
 
-class Object {
+class Sprite {
     constructor(position, image, collider, mass) {
         this.position = position;
         this.velocity = [0, 0];
@@ -61,6 +61,6 @@ class CollisionInfo {
     }
 }
 
-function checkForCollision(object, other) {
+function checkForCollision(sprite, other) {
     //collider.box
 }
