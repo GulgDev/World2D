@@ -7,8 +7,8 @@ class World2D {
         this.update();
     }
     
-    addObject(object) {
-        this.objects.push(object);
+    addSprite(sprite) {
+        this.sprites.push(sprite);
     }
     
     update() {
