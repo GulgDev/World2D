@@ -1,5 +1,6 @@
 class World2D {
     constructor(canvas) {
+        this.canvas = canvas;
         this.canvasCtx = canvas.getContext("2d");
         this.objects = [];
         
@@ -11,7 +12,7 @@ class World2D {
     }
     
     update() {
-        this.canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+        this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
         for (let object of this.objects) {
             object.draw(this.canvasCtx);
