@@ -12,7 +12,7 @@ class World2D {
     }
     
     update() {
-        // this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
         for (let sprite of this.sprites) {
             sprite.draw(this.canvasCtx);
@@ -29,7 +29,7 @@ class World2D {
 class Sprite {
     constructor(position, image, collider, mass) {
         this.position = position;
-        this.velocity = Vector2D.zero;
+        this.velocity = Vector2.zero;
         this.image = Object.assign(document.createElement("img"), {
             src: image
         });
