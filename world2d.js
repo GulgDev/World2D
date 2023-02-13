@@ -34,9 +34,9 @@ class Sprite {
             src: image
         });
         this.imageLoaded = false;
-        this.image.addEventListener("load", () => {
+        this.image.addEventListener("load", (() => {
             this.imageLoaded = true;
-        });
+        }).bind(this));
         this.collider = collider;
         this.mass = mass;
     }
