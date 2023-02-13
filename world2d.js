@@ -43,6 +43,7 @@ class Sprite {
     
     draw(canvasCtx) {
         if (this.imageLoaded) {
+            console.log(this.image.width, this.x);
             canvasCtx.drawImage(this.image, this.x - this.image.width / 2, this.y - this.image.height / 2);
         }
     }
