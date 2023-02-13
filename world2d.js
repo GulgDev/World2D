@@ -12,7 +12,7 @@ class World2D {
     }
     
     update() {
-        this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        // this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
         for (let sprite of this.sprites) {
             sprite.draw(this.canvasCtx);
@@ -42,7 +42,6 @@ class Sprite {
     }
     
     draw(canvasCtx) {
-        console.log(this.image, this.imageLoaded);
         if (this.imageLoaded) {
             canvasCtx.drawImage(this.image, this.x - this.image.width / 2, this.y - this.image.height / 2);
         }
