@@ -17,7 +17,7 @@ class World2D {
         for (let sprite of this.sprites) {
             sprite.draw(this.canvasCtx);
             
-            for (let other of this.objects) {
+            for (let other of this.sprites) {
                 checkForCollision(sprite, other);
             }
         }
